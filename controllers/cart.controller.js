@@ -5,6 +5,8 @@ const addToCart = async (req, res) => {
     const userId = req.query.userId;
     const { product, productCount } = req.body;
 
+   
+
     try {
 
       const user = await RegisterModel.findById(userId);
