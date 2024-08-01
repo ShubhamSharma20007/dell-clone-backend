@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const RegisterModel = require('../schema/register.schema');
 const jwt =  require('jsonwebtoken')
 const userRegister = async (req, res) => {
