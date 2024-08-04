@@ -4,14 +4,11 @@ const ProductModel = require('../schema/product.schema');
 const addToCart = async (req, res) => {
     const userId = req.query.userId;
     const { product, productCount } = req.body;
-
-   
-
     try {
 
       const user = await RegisterModel.findById(userId);
       if (!user) {
-        return res.status(404).json({ success: false, message: "User not found" });
+        return res.status(404).json({ success: false, message: "Login first to add to cart items" });
       }
 
       const cartItem = user.cart.find(item => item.product.toString() === product._id);
